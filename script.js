@@ -759,7 +759,7 @@ function checkout() {
   */
 
   const phone =
-    "27000000000";
+    "27712201955";
 
 
   window.open(
