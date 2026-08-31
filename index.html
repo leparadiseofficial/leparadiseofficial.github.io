@@ -3,93 +3,279 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="LeParadise — modern streetwear made for people who move differently.">
-  <title>LeParadise | Wear Your World</title>
+
+  <title>LeParadise | Premium Streetwear</title>
+  <meta name="description" content="LeParadise premium streetwear clothing store">
+
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-  <header class="nav">
-    <a class="logo" href="#home">LEPARADISE</a>
-    <button class="menu" aria-label="Open menu">☰</button>
-    <nav>
-      <a href="#home">Home</a>
-      <a href="#shop">Shop</a>
-      <a href="#collections">Collections</a>
-      <a href="#about">About</a>
-      <a href="#contact">Contact</a>
-      <button id="cartBtn" class="cart">Cart (<span id="cartCount">0</span>)</button>
+
+  <!-- HEADER -->
+  <header class="header">
+
+    <a href="#" class="logo" onclick="showPage('home')">
+      <span>LE</span>PARADISE
+    </a>
+
+    <nav class="desktop-nav">
+      <a href="#" onclick="showPage('home')">Home</a>
+      <a href="#shop" onclick="showPage('shop')">Shop</a>
+      <a href="#about" onclick="showPage('about')">About</a>
+      <a href="#contact" onclick="showPage('contact')">Contact</a>
     </nav>
+
+    <div class="header-actions">
+      <button onclick="openSearch()" aria-label="Search">⌕</button>
+
+      <button onclick="openCart()" class="cart-button" aria-label="Cart">
+        🛒
+        <span id="cart-count">0</span>
+      </button>
+
+      <button class="menu-button" onclick="toggleMenu()" aria-label="Menu">
+        ☰
+      </button>
+    </div>
+
   </header>
 
-  <main>
-    <section id="home" class="hero">
+  <!-- MOBILE MENU -->
+  <div id="mobile-menu" class="mobile-menu">
+
+    <button class="close-menu" onclick="toggleMenu()">×</button>
+
+    <a href="#" onclick="showPage('home'); toggleMenu()">Home</a>
+    <a href="#shop" onclick="showPage('shop'); toggleMenu()">Shop</a>
+    <a href="#about" onclick="showPage('about'); toggleMenu()">About</a>
+    <a href="#contact" onclick="showPage('contact'); toggleMenu()">Contact</a>
+
+  </div>
+
+  <!-- SEARCH -->
+  <div id="search-box" class="search-box">
+
+    <div class="search-inner">
+      <input
+        type="text"
+        id="search-input"
+        placeholder="Search LeParadise..."
+        oninput="searchProducts()"
+      >
+
+      <button onclick="closeSearch()">×</button>
+    </div>
+
+  </div>
+
+  <!-- HOME -->
+  <main id="home-page">
+
+    <!-- HERO -->
+    <section class="hero">
+
       <div class="hero-content">
-        <p class="eyebrow">THE NEW STREETWEAR ERA</p>
-        <h1>WEAR<br><span>YOUR WORLD.</span></h1>
-        <p>Bold design. Clean details. Your individuality.</p>
-        <a href="#shop" class="btn">SHOP THE COLLECTION</a>
+
+        <p class="small-title">WELCOME TO</p>
+
+        <h1>LE<span>PARADISE</span></h1>
+
+        <p class="hero-text">
+          Premium streetwear designed for people
+          who create their own style.
+        </p>
+
+        <button class="primary-button" onclick="showPage('shop')">
+          SHOP COLLECTION
+        </button>
+
       </div>
+
     </section>
 
+
+    <!-- FEATURED -->
+    <section class="section">
+
+      <div class="section-heading">
+
+        <div>
+          <p class="small-title">NEW DROP</p>
+          <h2>Featured Collection</h2>
+        </div>
+
+        <button class="view-all" onclick="showPage('shop')">
+          View All →
+        </button>
+
+      </div>
+
+      <div id="featured-products" class="product-grid"></div>
+
+    </section>
+
+
+    <!-- BRAND MESSAGE -->
+    <section class="brand-section">
+
+      <div>
+
+        <p class="small-title">THE LEPARADISE WAY</p>
+
+        <h2>WEAR YOUR<br>OWN PARADISE.</h2>
+
+        <p>
+          LeParadise is more than clothing.
+          It's confidence, creativity and individuality.
+        </p>
+
+        <button class="secondary-button" onclick="showPage('about')">
+          OUR STORY
+        </button>
+
+      </div>
+
+    </section>
+
+
+    <!-- SHOP -->
     <section id="shop" class="section">
-      <div class="section-head">
-        <div><p class="eyebrow">LEPARADISE</p><h2>Featured</h2></div>
-        <p>Streetwear built for everyday expression.</p>
+
+      <div class="section-heading">
+
+        <div>
+          <p class="small-title">EXPLORE</p>
+          <h2>Shop LeParadise</h2>
+        </div>
+
       </div>
-      <div class="grid" id="products"></div>
+
+      <div class="categories">
+
+        <button onclick="filterProducts('all')">All</button>
+        <button onclick="filterProducts('T-Shirts')">T-Shirts</button>
+        <button onclick="filterProducts('Hoodies')">Hoodies</button>
+        <button onclick="filterProducts('Pants')">Pants</button>
+        <button onclick="filterProducts('Accessories')">Accessories</button>
+
+      </div>
+
+      <div id="shop-products" class="product-grid"></div>
+
     </section>
 
-    <section id="collections" class="banner">
-      <p class="eyebrow">NEW DROP</p>
-      <h2>ENTER THE<br>PARADISE.</h2>
-      <p>The latest LeParadise pieces are here.</p>
-      <a href="#shop" class="btn light">EXPLORE NEW DROP</a>
+
+    <!-- ABOUT -->
+    <section id="about" class="info-section">
+
+      <p class="small-title">ABOUT US</p>
+
+      <h2>THIS IS LEPARADISE.</h2>
+
+      <p>
+        LeParadise is a modern streetwear brand created for
+        people who want their clothes to express who they are.
+      </p>
+
+      <p>
+        From oversized tees and premium hoodies to accessories,
+        every piece is designed with a bold and modern identity.
+      </p>
+
     </section>
 
-    <section id="about" class="section about">
-      <div>
-        <p class="eyebrow">OUR STORY</p>
-        <h2>MORE THAN<br>CLOTHING.</h2>
-      </div>
-      <div>
-        <p>LeParadise is a streetwear concept built around individuality, creativity and confidence.</p>
-        <p>From signature tees and hoodies to jackets, trousers, shorts, beanies and footwear, every piece is designed to become part of your own style.</p>
-        <p><strong>Wear it your way.</strong></p>
-      </div>
+
+    <!-- CONTACT -->
+    <section id="contact" class="contact-section">
+
+      <p class="small-title">GET IN TOUCH</p>
+
+      <h2>CONTACT LEPARADISE</h2>
+
+      <p>
+        Have a question about an order or product?
+        Send us a message.
+      </p>
+
+      <a
+        class="whatsapp-button"
+        href="https://wa.me/27000000000"
+        target="_blank"
+      >
+        💬 WhatsApp Us
+      </a>
+
     </section>
 
-    <section id="contact" class="section contact">
-      <p class="eyebrow">STAY CONNECTED</p>
-      <h2>JOIN THE<br>PARADISE.</h2>
-      <p>Get updates about new drops, collections and exclusive releases.</p>
-      <form id="contactForm">
-        <input type="email" placeholder="Your email address" required>
-        <button class="btn" type="submit">JOIN</button>
-      </form>
-      <p id="formMessage" class="message"></p>
-    </section>
   </main>
 
-  <footer>
-    <div class="logo">LEPARADISE</div>
-    <p>© 2026 LeParadise. All rights reserved.</p>
-    <div class="socials">
-      <a href="#" aria-label="Instagram">Instagram</a>
-      <a href="#" aria-label="Facebook">Facebook</a>
-      <a href="#" aria-label="TikTok">TikTok</a>
+
+  <!-- PRODUCT PAGE -->
+  <div id="product-page" class="page hidden">
+
+    <button class="back-button" onclick="showPage('home')">
+      ← Back
+    </button>
+
+    <div id="product-details"></div>
+
+  </div>
+
+
+  <!-- CART -->
+  <div id="cart-panel" class="cart-panel">
+
+    <div class="cart-header">
+
+      <h2>Your Cart</h2>
+
+      <button onclick="closeCart()">×</button>
+
     </div>
+
+    <div id="cart-items"></div>
+
+    <div class="cart-footer">
+
+      <div class="cart-total">
+        <span>Total</span>
+        <strong>R<span id="cart-total">0</span></strong>
+      </div>
+
+      <button class="primary-button" onclick="checkout()">
+        CHECKOUT
+      </button>
+
+    </div>
+
+  </div>
+
+  <!-- OVERLAY -->
+  <div id="overlay" onclick="closeEverything()"></div>
+
+
+  <!-- FOOTER -->
+  <footer>
+
+    <div class="footer-logo">
+      LEPARADISE
+    </div>
+
+    <p>
+      © 2026 LeParadise. All rights reserved.
+    </p>
+
+    <div class="socials">
+      <a href="#">Instagram</a>
+      <a href="#">TikTok</a>
+      <a href="#">Facebook</a>
+    </div>
+
   </footer>
 
-  <div id="cartPanel" class="cart-panel">
-    <div class="cart-top"><h3>Your Cart</h3><button id="closeCart">×</button></div>
-    <div id="cartItems"></div>
-    <div class="cart-bottom">
-      <strong>Total: R<span id="cartTotal">0</span></strong>
-      <button class="btn" id="checkout">CHECKOUT</button>
-    </div>
-  </div>
-  <div id="overlay"></div>
 
   <script src="script.js"></script>
+
 </body>
 </html>
