@@ -1093,3 +1093,111 @@ footer p {
   }
 
   }
+/* =====================================
+   LEPARADISE FAQ
+   ===================================== */
+
+.faq-section {
+  margin-top: 70px;
+  padding: 60px 30px;
+  background: #fff;
+  border-top: 1px solid #e5e5e5;
+}
+
+.faq-title {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.faq-title small {
+  display: block;
+  font-size: 11px;
+  letter-spacing: 2px;
+  font-weight: 600;
+  color: #777;
+  margin-bottom: 12px;
+}
+
+.faq-title h2 {
+  margin: 0;
+  font-size: 32px;
+  font-weight: 600;
+}
+
+.faq-title p {
+  max-width: 600px;
+  margin: 15px auto 0;
+  color: #666;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.faq-list {
+  max-width: 850px;
+  margin: 0 auto;
+  border-top: 1px solid #ddd;
+}
+
+.faq-item {
+  border-bottom: 1px solid #ddd;
+}
+
+.faq-item summary {
+  padding: 22px 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  list-style: none;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.faq-item summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq-item summary span {
+  font-size: 22px;
+  font-weight: 400;
+  transition: transform 0.2s ease;
+}
+
+.faq-item[open] summary span {
+  transform: rotate(45deg);
+}
+
+.faq-item p {
+  margin: 0;
+  padding: 0 35px 22px 5px;
+  color: #666;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+
+/* MOBILE FAQ */
+
+@media (max-width: 600px) {
+
+  .faq-section {
+    margin-top: 45px;
+    padding: 45px 18px;
+  }
+
+  .faq-title h2 {
+    font-size: 26px;
+  }
+
+  .faq-item summary {
+    padding: 18px 3px;
+    font-size: 14px;
+  }
+
+  .faq-item p {
+    padding-left: 3px;
+    padding-right: 20px;
+    font-size: 12px;
+  }
+
+    }
