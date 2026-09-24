@@ -755,7 +755,12 @@ footer p {
   .logo {
     font-size: 18px;
   }
-
+  
+  .logo img {
+    width: 85px;
+    height: 36px;
+    }
+  
   .logo-heart {
     font-size: 30px;
   }
