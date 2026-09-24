@@ -895,3 +895,102 @@ footer p {
   }
 
   }
+/* =====================================
+   LEPARADISE SHIPPING INFORMATION
+   ===================================== */
+
+.shipping-section {
+  margin-top: 70px;
+  padding: 60px 30px;
+  background: #111;
+  color: #fff;
+  text-align: center;
+}
+
+.shipping-title small {
+  display: block;
+  font-size: 11px;
+  letter-spacing: 2px;
+  font-weight: 600;
+  color: #aaa;
+  margin-bottom: 12px;
+}
+
+.shipping-title h2 {
+  margin: 0;
+  font-size: 32px;
+  font-weight: 600;
+}
+
+.shipping-title p {
+  max-width: 600px;
+  margin: 15px auto 40px;
+  color: #bbb;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.shipping-grid {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.shipping-card {
+  padding: 30px 22px;
+  background: #1b1b1b;
+  border: 1px solid #333;
+  border-radius: 4px;
+}
+
+.shipping-icon {
+  font-size: 28px;
+  margin-bottom: 18px;
+}
+
+.shipping-card h3 {
+  margin: 0 0 12px;
+  font-size: 18px;
+}
+
+.shipping-card p {
+  margin: 0;
+  color: #aaa;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.shipping-note {
+  max-width: 750px;
+  margin: 35px auto 0;
+  color: #888;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+
+/* MOBILE SHIPPING */
+
+@media (max-width: 700px) {
+
+  .shipping-section {
+    margin-top: 45px;
+    padding: 45px 18px;
+  }
+
+  .shipping-title h2 {
+    font-size: 26px;
+  }
+
+  .shipping-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .shipping-card {
+    padding: 25px 20px;
+  }
+
+    }
