@@ -78,10 +78,27 @@ const products = [
 ];
 
 
-let cart =
-  JSON.parse(
-    localStorage.getItem("leparadiseCart")
-  ) || [];
+let cart = [];
+let selectedSize = null;
+
+try {
+  const savedCart = JSON.parse(
+    localStorage.getItem("leparadiseCart") || "[]"
+  );
+
+  if (Array.isArray(savedCart)) {
+    cart = savedCart.filter(item =>
+      Number.isInteger(item?.id) &&
+      Number.isInteger(item?.quantity) &&
+      item.quantity > 0 &&
+      products.some(product => product.id === item.id)
+    );
+  }
+} catch (error) {
+  console.warn("Invalid cart data cleared.");
+  localStorage.removeItem("leparadiseCart");
+  cart = [];
+}
 
 
 /* START */
@@ -238,19 +255,15 @@ function searchProducts() {
       .trim();
 
   const results =
-    products.filter(product =>
+    products.filter(product => {
+      const searchableText = `
+        ${product.name}
+        ${product.category}
+        ${product.description}
+      `.toLowerCase();
 
-      product.name
-        .toLowerCase()
-        .includes(search)
-
-      ||
-
-      product.category
-        .toLowerCase()
-        .includes(search)
-
-    );
+      return searchableText.includes(search);
+    });
 
   displayProducts(results);
 
@@ -297,6 +310,8 @@ function toggleMenu() {
 /* PRODUCT DETAILS */
 
 function viewProduct(id) {
+
+  selectedSize = null;
 
   const product =
     products.find(
@@ -442,6 +457,7 @@ function selectSize(button) {
     });
 
   button.classList.add("selected");
+  selectedSize = button.textContent.trim();
 
 }
 
@@ -450,6 +466,11 @@ function selectSize(button) {
 
 function addToCart(id) {
 
+  if (!selectedSize) {
+    alert("Please select a size first.");
+    return;
+  }
+
   const product =
     products.find(
       item => item.id === id
@@ -457,12 +478,12 @@ function addToCart(id) {
 
   if (!product) return;
 
-
   const existing =
     cart.find(
-      item => item.id === id
+      item =>
+        item.id === id &&
+        item.size === selectedSize
     );
-
 
   if (existing) {
 
@@ -480,12 +501,13 @@ function addToCart(id) {
 
       image: product.image,
 
+      size: selectedSize,
+
       quantity: 1
 
     });
 
   }
-
 
   saveCart();
 
@@ -498,11 +520,11 @@ function addToCart(id) {
 
 /* REMOVE */
 
-function removeFromCart(id) {
+function removeFromCart(id, size) {
 
   cart =
     cart.filter(
-      item => item.id !== id
+      item => !(item.id === id && (size === undefined || item.size === size))
     );
 
   saveCart();
@@ -516,12 +538,15 @@ function removeFromCart(id) {
 
 function changeQuantity(
   id,
-  amount
+  amount,
+  size
 ) {
 
   const item =
     cart.find(
-      product => product.id === id
+      product =>
+        product.id === id &&
+        (size === undefined || product.size === size)
     );
 
   if (!item) return;
@@ -640,11 +665,15 @@ function updateCart() {
             R${item.price.toLocaleString()}
           </strong>
 
+          <p>
+            Size: ${item.size || "One Size"}
+          </p>
+
           <div class="quantity">
 
             <button
               onclick="changeQuantity(
-                ${item.id}, -1
+                ${item.id}, -1, '${item.size || "One Size"}'
               )"
             >
               −
@@ -656,7 +685,7 @@ function updateCart() {
 
             <button
               onclick="changeQuantity(
-                ${item.id}, 1
+                ${item.id}, 1, '${item.size || "One Size"}'
               )"
             >
               +
@@ -667,7 +696,7 @@ function updateCart() {
           <button
             class="remove"
             onclick="removeFromCart(
-              ${item.id}
+              ${item.id}, '${item.size || "One Size"}'
             )"
           >
             Remove
@@ -756,7 +785,7 @@ function checkout() {
 
 
     message +=
-      `${item.name} x ${item.quantity} - R${itemTotal}%0A`;
+      `${item.name}%0ASize: ${item.size || "One Size"}%0AQuantity: ${item.quantity}%0APrice: R${itemTotal}%0A%0A`;
 
   });
 
