@@ -583,7 +583,9 @@ a {
   height: 100vh;
 
   background: white;
-
+  
+  box-shadow: -10px 0 30px rgba(0,0,0,.12);
+  
   z-index: 2500;
 
   display: flex;
