@@ -366,6 +366,15 @@ a {
   background: #ddd;
 }
 
+.product-image {
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.product-card:hover .product-image {
+  transform: scale(1.03);
+  opacity: 0.92;
+}
+
 .product-info {
   padding: 15px 2px 30px;
 }
