@@ -702,6 +702,16 @@ a {
   border: none;
 
   font-weight: bold;
+  
+  .checkout-button {
+  transition: background 0.25s ease, transform 0.25s ease;
+}
+
+.checkout-button:hover {
+  background: #333;
+  transform: translateY(-2px);
+}
+  
 }
 
 
