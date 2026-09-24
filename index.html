@@ -4,6 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <meta
+    name="description"
+    content="LeParadise — premium streetwear created for confidence, individuality and everyday style."
+  >
+
   <title>LeParadise | Official Store</title>
 
   <link rel="stylesheet" href="style.css">
@@ -27,16 +32,30 @@
 
   <div class="header-buttons">
 
-    <button onclick="openSearch()" aria-label="Search">
+    <button
+      onclick="openSearch()"
+      aria-label="Search"
+      type="button"
+    >
       🔍
     </button>
 
-    <button onclick="openCart()" class="cart-btn">
+    <button
+      onclick="openCart()"
+      class="cart-btn"
+      aria-label="Shopping cart"
+      type="button"
+    >
       🛒
       <span id="cart-count">0</span>
     </button>
 
-    <button onclick="toggleMenu()" class="menu-btn">
+    <button
+      onclick="toggleMenu()"
+      class="menu-btn"
+      aria-label="Open menu"
+      type="button"
+    >
       ☰
     </button>
 
@@ -49,7 +68,14 @@
 
 <div id="mobile-menu" class="mobile-menu">
 
-  <button class="close-menu" onclick="toggleMenu()">×</button>
+  <button
+    class="close-menu"
+    onclick="toggleMenu()"
+    type="button"
+    aria-label="Close menu"
+  >
+    ×
+  </button>
 
   <a href="#home" onclick="toggleMenu()">Home</a>
   <a href="#shop" onclick="toggleMenu()">Shop</a>
@@ -70,9 +96,16 @@
       type="search"
       placeholder="Search products..."
       oninput="searchProducts()"
+      aria-label="Search products"
     >
 
-    <button onclick="closeSearch()">×</button>
+    <button
+      onclick="closeSearch()"
+      type="button"
+      aria-label="Close search"
+    >
+      ×
+    </button>
 
   </div>
 
@@ -83,164 +116,281 @@
 
 <main id="home">
 
-<section class="hero">
+  <!-- HERO -->
 
-  <div class="hero-content">
+  <section class="hero">
 
-    <p>WELCOME TO</p>
+    <div class="hero-content">
 
-    <h1>LEPARADISE</h1>
+      <p>WELCOME TO</p>
 
-    <h2>WEAR YOUR OWN PARADISE.</h2>
+      <h1>LEPARADISE</h1>
 
-    <p class="hero-description">
-      Premium streetwear created for confidence,
-      individuality and everyday style.
-    </p>
+      <h2>WEAR YOUR OWN PARADISE.</h2>
 
-    <a href="#shop" class="main-button">
-      SHOP NOW
-    </a>
+      <p class="hero-description">
+        Premium streetwear created for confidence,
+        individuality and everyday style.
+      </p>
 
-  </div>
+      <a href="#shop" class="main-button">
+        SHOP NOW
+      </a>
 
-</section>
-
-
-<!-- FEATURED -->
-
-<section class="section">
-
-  <div class="section-title">
-
-    <div>
-      <small>NEW COLLECTION</small>
-      <h2>Featured</h2>
     </div>
 
-    <a href="#shop">View all →</a>
-
-  </div>
-
-  <div id="featured-products" class="product-grid"></div>
-
-</section>
+  </section>
 
 
-<!-- SHOP -->
+  <!-- FEATURED -->
 
-<section id="shop" class="section shop-section">
+  <section class="section">
 
-  <div class="section-title">
+    <div class="section-title">
 
-    <div>
-      <small>LEPARADISE COLLECTION</small>
-      <h2>Shop</h2>
+      <div>
+        <small>NEW COLLECTION</small>
+        <h2>Featured</h2>
+      </div>
+
+      <a href="#shop">View all →</a>
+
     </div>
 
-  </div>
+    <div
+      id="featured-products"
+      class="product-grid"
+    ></div>
+
+  </section>
 
 
-  <div class="categories">
+  <!-- SHOP -->
 
-    <button onclick="filterProducts('all')">
-      All
-    </button>
+  <section
+    id="shop"
+    class="section shop-section"
+  >
 
-    <button onclick="filterProducts('T-Shirts')">
-      T-Shirts
-    </button>
+    <div class="section-title">
 
-    <button onclick="filterProducts('Hoodies')">
-      Hoodies
-    </button>
+      <div>
+        <small>LEPARADISE COLLECTION</small>
+        <h2>Shop</h2>
+      </div>
 
-    <button onclick="filterProducts('Jackets')">
-      Jackets
-    </button>
-
-  </div>
+    </div>
 
 
-  <div id="shop-products" class="product-grid"></div>
+    <!-- PRODUCT FILTERS -->
 
-</section>
+    <div class="categories">
+
+      <button
+        onclick="filterProducts('all')"
+        type="button"
+      >
+        All
+      </button>
+
+      <button
+        onclick="filterProducts('T-Shirts')"
+        type="button"
+      >
+        T-Shirts
+      </button>
+
+      <button
+        onclick="filterProducts('Hoodies')"
+        type="button"
+      >
+        Hoodies
+      </button>
+
+      <button
+        onclick="filterProducts('Jackets')"
+        type="button"
+      >
+        Jackets
+      </button>
+
+    </div>
 
 
-<!-- BRAND -->
+    <!-- PRODUCTS -->
 
-<section class="brand-section">
+    <div
+      id="shop-products"
+      class="product-grid"
+    ></div>
 
-  <div>
 
-    <small>THE LEPARADISE WAY</small>
+    <!-- SIZE GUIDE -->
+
+    <div class="size-guide">
+
+      <div class="size-guide-title">
+
+        <small>FIND YOUR FIT</small>
+
+        <h3>Size Guide</h3>
+
+        <p>
+          Choose the size that fits you best.
+        </p>
+
+      </div>
+
+
+      <div class="size-table-wrapper">
+
+        <table class="size-table">
+
+          <thead>
+
+            <tr>
+              <th>Size</th>
+              <th>Chest</th>
+              <th>Length</th>
+            </tr>
+
+          </thead>
+
+          <tbody>
+
+            <tr>
+              <td>S</td>
+              <td>36–38"</td>
+              <td>27"</td>
+            </tr>
+
+            <tr>
+              <td>M</td>
+              <td>39–41"</td>
+              <td>28"</td>
+            </tr>
+
+            <tr>
+              <td>L</td>
+              <td>42–44"</td>
+              <td>29"</td>
+            </tr>
+
+            <tr>
+              <td>XL</td>
+              <td>45–47"</td>
+              <td>30"</td>
+            </tr>
+
+          </tbody>
+
+        </table>
+
+      </div>
+
+
+      <p class="size-guide-note">
+        Measurements are approximate. For the best fit,
+        compare these measurements with a garment you
+        already own.
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <!-- BRAND -->
+
+  <section class="brand-section">
+
+    <div>
+
+      <small>THE LEPARADISE WAY</small>
+
+      <h2>
+        YOUR STYLE.<br>
+        YOUR STORY.
+      </h2>
+
+      <p>
+        LeParadise brings bold streetwear and clean
+        everyday fashion together.
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <!-- ABOUT -->
+
+  <section
+    id="about"
+    class="text-section"
+  >
+
+    <small>ABOUT LEPARADISE</small>
 
     <h2>
-      YOUR STYLE.<br>
-      YOUR STORY.
+      BUILT FOR<br>
+      INDIVIDUALITY.
     </h2>
 
     <p>
-      LeParadise brings bold streetwear and clean
-      everyday fashion together.
+      LeParadise is a modern clothing brand focused on
+      unique streetwear, quality designs and personal style.
     </p>
 
-  </div>
+    <p>
+      Our collection is designed to give you pieces that
+      you can wear your own way.
+    </p>
 
-</section>
-
-
-<!-- ABOUT -->
-
-<section id="about" class="text-section">
-
-  <small>ABOUT LEPARADISE</small>
-
-  <h2>BUILT FOR<br>INDIVIDUALITY.</h2>
-
-  <p>
-    LeParadise is a modern clothing brand focused on
-    unique streetwear, quality designs and personal style.
-  </p>
-
-  <p>
-    Our collection is designed to give you pieces that
-    you can wear your own way.
-  </p>
-
-</section>
+  </section>
 
 
-<!-- CONTACT -->
+  <!-- CONTACT -->
 
-<section id="contact" class="contact-section">
-
-  <small>CONTACT</small>
-
-  <h2>LET'S TALK.</h2>
-
-  <p>
-    Have a question about our products or an order?
-  </p>
-
-  <a
-    href="https://wa.me/27712201955"
-    target="_blank"
-    class="main-button"
+  <section
+    id="contact"
+    class="contact-section"
   >
-    💬 WhatsApp
-  </a>
 
-</section>
+    <small>CONTACT</small>
+
+    <h2>LET'S TALK.</h2>
+
+    <p>
+      Have a question about our products or an order?
+    </p>
+
+    <a
+      href="https://wa.me/27712201955"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="main-button"
+    >
+      💬 WhatsApp
+    </a>
+
+  </section>
 
 </main>
 
 
 <!-- PRODUCT PAGE -->
 
-<section id="product-page" class="product-page hidden">
+<section
+  id="product-page"
+  class="product-page hidden"
+>
 
-  <button onclick="closeProduct()" class="back-button">
+  <button
+    onclick="closeProduct()"
+    class="back-button"
+    type="button"
+  >
     ← Back to shop
   </button>
 
@@ -249,9 +399,15 @@
 </section>
 
 
-<!-- CART -->
+<!-- CART OVERLAY -->
 
-<div id="overlay" onclick="closeCart()"></div>
+<div
+  id="overlay"
+  onclick="closeCart()"
+></div>
+
+
+<!-- CART -->
 
 <aside id="cart">
 
@@ -259,11 +415,19 @@
 
     <h2>Your Cart</h2>
 
-    <button onclick="closeCart()">×</button>
+    <button
+      onclick="closeCart()"
+      type="button"
+      aria-label="Close cart"
+    >
+      ×
+    </button>
 
   </div>
 
+
   <div id="cart-items"></div>
+
 
   <div class="cart-bottom">
 
@@ -277,7 +441,11 @@
 
     </div>
 
-    <button onclick="checkout()" class="checkout-button">
+    <button
+      onclick="checkout()"
+      class="checkout-button"
+      type="button"
+    >
       CHECKOUT
     </button>
 
@@ -285,6 +453,8 @@
 
 </aside>
 
+
+<!-- FOOTER -->
 
 <footer>
 
@@ -307,7 +477,9 @@
 </footer>
 
 
+<!-- JAVASCRIPT -->
+
 <script src="script.js"></script>
 
 </body>
-</html>
+      </html>
