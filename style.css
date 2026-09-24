@@ -57,6 +57,13 @@ a {
   letter-spacing: -1px;
 }
 
+.logo img {
+  width: 110px;
+  height: 45px;
+  object-fit: contain;
+  display: block;
+}
+
 .logo-heart {
   font-size: 37px;
   line-height: 1;
