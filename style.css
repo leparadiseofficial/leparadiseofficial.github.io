@@ -994,3 +994,102 @@ footer p {
   }
 
     }
+/* =====================================
+   LEPARADISE RETURNS & EXCHANGES
+   ===================================== */
+
+.returns-section {
+  margin-top: 70px;
+  padding: 60px 30px;
+  background: #f7f7f7;
+  text-align: center;
+  border-top: 1px solid #e5e5e5;
+}
+
+.returns-title small {
+  display: block;
+  font-size: 11px;
+  letter-spacing: 2px;
+  font-weight: 600;
+  color: #777;
+  margin-bottom: 12px;
+}
+
+.returns-title h2 {
+  margin: 0;
+  font-size: 32px;
+  font-weight: 600;
+}
+
+.returns-title p {
+  max-width: 600px;
+  margin: 15px auto 40px;
+  color: #666;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.returns-grid {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.returns-card {
+  padding: 30px 22px;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.returns-icon {
+  font-size: 28px;
+  margin-bottom: 18px;
+}
+
+.returns-card h3 {
+  margin: 0 0 12px;
+  font-size: 18px;
+}
+
+.returns-card p {
+  margin: 0;
+  color: #666;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.returns-note {
+  max-width: 750px;
+  margin: 35px auto 0;
+  color: #777;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+
+/* MOBILE RETURNS */
+
+@media (max-width: 700px) {
+
+  .returns-section {
+    margin-top: 45px;
+    padding: 45px 18px;
+  }
+
+  .returns-title h2 {
+    font-size: 26px;
+  }
+
+  .returns-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .returns-card {
+    padding: 25px 20px;
+  }
+
+  }
