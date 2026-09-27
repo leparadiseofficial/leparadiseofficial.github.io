@@ -1237,6 +1237,14 @@ footer p {
   font-weight: 600;
 }
 
+.faq-item summary {
+  transition: opacity 0.2s ease;
+}
+
+.faq-item summary:hover {
+  opacity: 0.65;
+}
+
 .faq-item summary::-webkit-details-marker {
   display: none;
 }
