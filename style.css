@@ -287,7 +287,6 @@ a {
 
 
 /* BUTTON */
-
 .main-button {
   display: inline-block;
 
@@ -301,7 +300,15 @@ a {
   letter-spacing: 1px;
 
   border: none;
+
+  transition: background 0.25s ease, transform 0.25s ease;
 }
+
+.main-button:hover {
+  background: #333;
+  transform: translateY(-2px);
+}
+
 
 
 /* SECTIONS */
