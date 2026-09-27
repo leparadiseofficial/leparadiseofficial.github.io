@@ -77,6 +77,15 @@ a {
 .desktop-nav a {
   font-size: 14px;
   font-weight: bold;
+  
+}
+
+.desktop-nav a {
+  transition: opacity 0.25s ease;
+}
+
+.desktop-nav a:hover {
+  opacity: 0.55;
 }
 
 .header-buttons {
