@@ -380,6 +380,14 @@ a {
   min-width: 0;
 }
 
+.product-card {
+  transition: transform 0.25s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-4px);
+}
+
 .product-image {
   width: 100%;
   aspect-ratio: .82;
