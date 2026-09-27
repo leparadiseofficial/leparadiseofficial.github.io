@@ -583,6 +583,16 @@ a {
   padding: 12px 18px;
 }
 
+.sizes button {
+  transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+.sizes button:hover {
+  background: #111;
+  color: white;
+  transform: translateY(-2px);
+}
+
 .sizes button.selected {
   background: #111;
   color: white;
