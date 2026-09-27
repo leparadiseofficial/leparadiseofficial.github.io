@@ -162,6 +162,15 @@ a {
   font-weight: bold;
 }
 
+.mobile-menu a {
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.mobile-menu a:active {
+  opacity: 0.6;
+  transform: translateX(5px);
+}
+
 .close-menu {
   position: absolute;
   right: 25px;
