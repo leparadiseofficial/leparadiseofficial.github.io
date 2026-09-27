@@ -141,7 +141,7 @@ a {
   flex-direction: column;
   gap: 30px;
 
-  transition: .4s;
+  transition: right 0.4s ease;
 }
 
 .mobile-menu.active {
