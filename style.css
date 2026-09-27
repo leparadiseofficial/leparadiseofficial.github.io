@@ -187,7 +187,9 @@ a {
 /* SEARCH */
 
 .search-box {
-  display: none;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
 
   position: fixed;
   top: 75px;
@@ -202,10 +204,14 @@ a {
   padding: 20px 6%;
 
   border-bottom: 1px solid #ddd;
+
+  transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s ease;
 }
 
 .search-box.active {
-  display: block;
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
 }
 
 .search-content {
