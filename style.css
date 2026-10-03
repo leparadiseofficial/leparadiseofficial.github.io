@@ -77,11 +77,8 @@ a {
 
 .desktop-nav a {
   font-size: 14px;
-  font-weight: bold;
-  
-}
-
-.desktop-nav a {
+  font-weight: 700;
+  letter-spacing: 0.3px;
   transition: opacity 0.25s ease;
 }
 
@@ -99,6 +96,13 @@ a {
   border: none;
   background: transparent;
   font-size: 20px;
+  cursor: pointer;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.header-buttons button:hover {
+  opacity: 0.6;
+  transform: translateY(-1px);
 }
 
 .cart-btn {
@@ -127,7 +131,6 @@ a {
 .menu-btn {
   display: none;
 }
-
 
 /* MOBILE MENU */
 
