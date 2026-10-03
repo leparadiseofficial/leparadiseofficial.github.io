@@ -800,36 +800,41 @@ a {
 footer {
   background: #111;
   color: white;
-
   text-align: center;
-
-  padding: 60px 6%;
+  padding: 70px 6%;
 }
 
 .footer-logo {
-  font-size: 30px;
-  font-weight: bold;
+  font-size: 32px;
+  font-weight: 900;
   font-style: italic;
-
-  margin-bottom: 20px;
+  letter-spacing: -1px;
+  margin-bottom: 22px;
 }
 
 footer p {
   color: #aaa;
-
   font-size: 12px;
+  letter-spacing: 0.3px;
 }
 
 .footer-links {
   display: flex;
   justify-content: center;
-
-  gap: 25px;
-
-  margin-top: 25px;
-
+  gap: 28px;
+  flex-wrap: wrap;
+  margin-top: 28px;
   font-size: 13px;
 }
+
+.footer-links a {
+  color: white;
+  transition: opacity 0.25s ease;
+}
+
+.footer-links a:hover {
+  opacity: 0.55;
+  }
 
 
 /* MOBILE */
