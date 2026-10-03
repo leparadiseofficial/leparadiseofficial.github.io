@@ -983,6 +983,22 @@ footer p {
   .size-guide-note {
     font-size: 12px;
   }
+  
+ footer {
+  padding: 50px 5%;
+  text-align: center;
+}
+
+.footer-links {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: center;
+}
+
+.footer-links a {
+  display: block;
+  }
 
   }
 /* =====================================
