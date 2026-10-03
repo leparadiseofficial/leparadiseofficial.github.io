@@ -514,15 +514,16 @@ a {
 
 .brand-section h2 {
   font-size: clamp(45px, 8vw, 100px);
-
-  line-height: .9;
-
+  line-height: 0.9;
+  font-weight: 900;
+  letter-spacing: -3px;
   margin: 20px 0;
 }
 
 .brand-section p {
   max-width: 500px;
   line-height: 1.7;
+  font-size: 15px;
 }
 
 
