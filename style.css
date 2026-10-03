@@ -459,8 +459,10 @@ a {
 }
 
 .product-price {
-  font-weight: bold;
-  margin-bottom: 10px;
+  font-size: 15px;
+  font-weight: 800;
+  letter-spacing: 0.3px;
+  margin-bottom: 12px;
 }
 
 .product-info button {
