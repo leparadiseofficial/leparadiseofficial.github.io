@@ -387,6 +387,26 @@ a {
 }
 
 .product-card {
+  background: #fff;
+  padding-bottom: 15px;
+  overflow: hidden;
+}
+
+.product-info {
+  padding: 14px 5px 0;
+}
+
+.product-info h3 {
+  font-size: 15px;
+  margin-bottom: 6px;
+}
+
+.product-info p {
+  font-size: 14px;
+  font-weight: 600;
+  }
+
+.product-card {
   transition: transform 0.25s ease;
 }
 
