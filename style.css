@@ -445,10 +445,11 @@ a {
 
 .product-category {
   color: #777;
-
   font-size: 10px;
-  letter-spacing: 2px;
+  font-weight: 700;
+  letter-spacing: 2.2px;
   text-transform: uppercase;
+  margin-bottom: 6px;
 }
 
 .product-name {
