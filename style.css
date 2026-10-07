@@ -801,7 +801,8 @@ footer {
   background: #111;
   color: white;
   text-align: center;
-  padding: 70px 6%;
+  padding: 90px 6% 7px;
+  border-top:1px solid #222;
 }
 
 .footer-logo {
